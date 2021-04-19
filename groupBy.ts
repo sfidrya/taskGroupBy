@@ -1,4 +1,4 @@
-export default function testGroupBy <T1, T2> (elements: Array<T1>, getKey: ((T1) => T2)) {
+export default function groupByKey <T1, T2> (elements: Array<T1>, getKey: ((T1) => T2)) {
   const result = new Map <T2, Array<T1>>()
 
   for (const element of elements) {
