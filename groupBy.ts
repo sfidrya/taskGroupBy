@@ -14,10 +14,5 @@ export default function groupByKey <T1, T2> (elements: Array<T1>, getKey: ((T1) 
     result.set(key, temple)
   }
 
-  console.log("Result: ")
-  for (let [key, value] of result) {
-    console.log(key + ' : ' + value)
-  }
-
   return result
 }
