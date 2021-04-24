@@ -1,17 +1,19 @@
-export default function groupByKey <T1, T2> (elements: Array<T1>, getKey: ((T1) => T2)) {
-  const result = new Map <T2, Array<T1>>()
+export default function groupByKey<
+  T1,
+  T2 extends number | string | symbol
+>(elements: Array<T1>, getKey: ((T1) => T2)) {
+  
+  type Result = Partial<Record<T2, Array<T1>>>
+  let result: Result = {}
 
   for (const element of elements) {
     let key = getKey(element)
-    let temple: Array<T1>
 
-    if (result.has(key)) {
-      temple = result.get(key)
+    if (result[key]) {
+      result[key][result[key].length] = element      
     } else {
-      temple = []
+      result[key] = [element]
     }
-    temple.push(element)
-    result.set(key, temple)
   }
 
   return result
