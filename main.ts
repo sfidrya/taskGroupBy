@@ -1,9 +1,9 @@
-import groupByKey from './groupBy'
+import groupBy from './groupBy'
 
-const result1 = groupByKey([1.2, 1.1, 2.3, 0.4], Math.floor)
+const result1 = groupBy([1.2, 1.1, 2.3, 0.4], Math.floor)
 console.log(JSON.stringify(result1))
 
-const result2 = groupByKey(["one", "two", "three"], (el: string): number => el.length)
+const result2 = groupBy(["one", "two", "three"], (el: string): number => el.length)
 console.log(JSON.stringify(result2))
 
 enum Gender {
@@ -11,7 +11,7 @@ enum Gender {
   Female,
 }
 
-const result3 = groupByKey(
+const result3 = groupBy(
   [
     { g: Gender.Male, n: "A" },
     { g: Gender.Female, n: "B" },

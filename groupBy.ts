@@ -1,4 +1,4 @@
-export default function groupByKey<
+export default function groupBy<
   T1,
   T2 extends number | string | symbol
 >(elements: Array<T1>, getKey: ((T1) => T2)) {
