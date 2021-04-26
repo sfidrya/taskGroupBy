@@ -9,8 +9,8 @@ export default function groupBy<
   for (const element of elements) {
     let key = getKey(element)
 
-    if (result[key]) {
-      result[key][result[key].length] = element      
+    if (Object.prototype.hasOwnProperty.call(result, key)) {
+      result[key][result[key].length] = element   
     } else {
       result[key] = [element]
     }

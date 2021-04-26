@@ -19,5 +19,9 @@ const result3 = groupBy(
   ],
   (el) => el.g
 )
+
 console.log(JSON.stringify(result3))
+
+const result4 = groupBy([1,2,3], () => 'toString')
+console.log(JSON.stringify(result4))
 
